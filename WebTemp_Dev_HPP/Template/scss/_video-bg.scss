@@ -1,0 +1,128 @@
+
+
+/***self hosted video css***/
+/**video css new**/
+.video-section {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: table;
+  overflow: hidden; 
+  .bottom-row{
+      position: absolute;
+      width:100%;
+      left: 0;
+      bottom: 0;
+      z-index:9;
+      li a{
+          color:#fff;
+          margin: 0px 5px;
+      }
+  }
+}
+
+.video-section .overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; }
+
+.video-section .fs-background-container {
+  left: 0; }
+
+.video-section .video-overlay {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: table-cell;
+  vertical-align: middle;
+  z-index: 2; }
+
+.text-rotator{
+    h2{
+        color:#fff;
+        font-weight: 700;
+        font-family: $default-font;
+        font-size: 5rem;
+    }
+    .flexslider{
+        background: transparent;
+        border: 0;
+        padding: 0;
+        margin: 0;
+        h2{
+            color:$skin-color;
+        }
+    }
+}
+
+.video-play{
+    display: inline-block;
+    @include border-radius(50%);
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    background-color: #fff;
+    font-size: 20px;
+}
+
+/**youtube player**/
+.intro-ytp{
+   height: 100%;
+    width: 100%;
+    background: url(../images/video-fallback.jpg) no-repeat center;
+    -webkit-background-size: 100% auto;
+    -moz-background-size: 100% auto;
+    -o-background-size: 100% auto;
+    background-size: 100% auto;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    display: block;
+    position: relative;
+}
+.video-text{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top:0;
+    .video-content{
+        display: table;
+        width: 100%;
+    height: 100%;
+    position: relative;
+    background-color:rgba(0,0,0,0.5);
+    .video-inner{
+        display: table-cell;
+        vertical-align: middle;
+        width:100%;
+        h5{
+            text-transform: uppercase;
+            font-weight: 400;
+            font-family: $title-font;
+            font-size:2rem;
+            color:#fff;
+        }
+        h2{
+            text-transform: uppercase;
+            font-weight: 700;
+             font-family: $title-font;
+             font-size: 5rem;
+             color:#fff;
+        }
+        p{
+            font-weight: 500;
+            color:#fff;
+            margin-bottom: 20px;
+        }
+    }
+    }
+}

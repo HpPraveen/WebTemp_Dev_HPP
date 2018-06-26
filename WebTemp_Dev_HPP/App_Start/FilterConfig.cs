@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace WebTemp_Dev_HPP
+namespace TeKssWeb
 {
     public class FilterConfig
     {

@@ -1,0 +1,43 @@
+/*
+Form elements
+*/
+/**from inputs**/
+input[type="text"],
+input[type="password"],input[type="email"], select.form-control {
+    height: 50px;
+}
+.form-control{
+    @include box-shadow(inset 0 1px 1px rgba(0,0,0,.075));
+    @include  border-radius(0);
+    padding-left: 20px;
+    font-size: 13px;
+    font-weight: 500;
+    background: #fff;
+    border: 1px solid #ddd;
+    width: 100%;
+    &:focus{
+     @include box-shadow(none);
+    }
+}
+.input-group-addon{
+    border: 0px;
+}
+.has-error .form-control{
+    @include box-shadow(none);
+    border: 1px solid #a94442;
+}
+#captcha{
+    border: 2px solid #f3f3f3;
+}
+#emailAlert.alert-success{
+    background-color: #3c763d;
+    color:#fff;
+    margin-top:15px !important;
+}
+/**login register**/
+.form-login-register{
+    .social-signin{
+       width: 100%;
+       display:block;
+    }
+}

@@ -1,0 +1,44 @@
+/**progress bars**/
+.progress{
+    background-color: #eee;
+    @include border-radius(0px);
+    @include box-shadow(none);
+    height: 2px;
+    .progress-bar{
+        background-color: $skin-color;
+        line-height:2px;
+        @include box-shadow(none);
+      
+    }
+}
+
+      .skill {
+    position: relative;
+    text-align: left;
+.skill-name, .skill-perc {
+    margin-bottom: 12px;
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 13px;
+    font-weight: 500;
+}
+.skill-perc {
+    position: absolute;
+    top: 0;
+    font-size: 12px;
+}
+}
+.skills-bg{
+    .skill{
+        .skill-name, .skill-perc{
+            color: #fff;
+        }  
+    } 
+    .progress{
+        background-color: transparent;
+        .progress-bar{
+            background-color: #fff;
+        }
+    }
+}

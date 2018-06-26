@@ -1,0 +1,19 @@
+
+/* 
+ Flex slider
+*/
+.flexslider{
+    border: 0px;
+    margin: 0px;
+}
+.flex-direction-nav a {
+    line-height: 40px;
+    text-align: center;
+    color: #fff;
+    text-shadow: none;
+    &:before {
+    color: $skin-color;
+    text-shadow: none;
+}
+}
+

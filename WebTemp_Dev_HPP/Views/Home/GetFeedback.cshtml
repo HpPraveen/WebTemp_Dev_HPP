@@ -1,0 +1,189 @@
+﻿@{
+    Layout = null;
+}
+
+<style>
+    span.error {
+        color: #a94442;
+    }
+
+    .red-border {
+        border: 1px solid #a94442;
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+        border-radius: 0;
+        padding-left: 20px;
+        font-size: 13px;
+        font-weight: 500;
+        background: #fff;
+        width: 100%;
+    }
+
+    div {
+        opacity: 1;
+        transition: opacity 500ms;
+    }
+
+        div.waa {
+            opacity: 0;
+        }
+</style>
+
+<script type="text/javascript">
+
+    function FeedbackFormSubmit(btnClick) {
+        if (validated()) {
+            var fbname = $('#name').val();
+            var fbemail = $('#email').val();
+            var fbsubject = $('#subject').val();
+            var fbmessage = $('#message').val();
+            $.ajax({
+                data: { 'name': fbname, 'email': fbemail, 'subject': fbsubject, 'message': fbmessage },
+                url: "/Home/GetFeedbackForm",
+                type: "get",
+                success: function (response) {
+                    if (response != null && response.success) {
+                        $('#feedbackForm').prepend("<div id=\"#emailAlert\"class=\"alert alert-success fade in\" style=\"margin-top: 5px;\"><button class=\"close\" data-dismiss=\"alert\" type=\"button\">&times;</button><strong>Contact Form Submitted!</strong> We will be in touch soon.</div>");
+                        $('#name').val("");
+                        $('#email').val("");
+                        $('#subject').val("");
+                        $('#message').val("");
+
+                    } else {
+
+                        alert(response.responseText);
+                    }
+                },
+                error: function (response) {
+                    alert("error!");
+                }
+
+            });
+
+        }
+    }
+
+    //setTimeout(function () {
+    //    document.getElementById('emailAlert').className = 'waa';
+    //}, 2500);
+
+    function validated() {
+        var feedbackname_validation = document.getElementById("feedbackname_validation");
+        var feedbackemail_validation = document.getElementById("feedbackemail_validation");
+        var subject_validation = document.getElementById("subject_validation");
+        var message_validation = document.getElementById("message_validation");
+        if (document.feedbackForm.name.value == "") {
+            feedbackname_validation.innerHTML = "Name field Required";
+            feedbackname_validation.style.display = "block";
+            document.feedbackForm.name.focus();
+            return false;
+        }
+        else {
+            feedbackname_validation.style.display = "none";
+            feedbackname_validation.parentNode.style.backgroundColor = "transparent";
+
+        }
+
+        if (document.feedbackForm.email.value == "") {
+            feedbackemail_validation.innerHTML = "Email field Required";
+            feedbackemail_validation.style.display = "block";
+            document.feedbackForm.email.focus();
+            return false;
+        }
+        if (document.feedbackForm.email.value != "") {
+            var emailID = document.feedbackForm.email.value;
+            atpos = emailID.indexOf("@@");
+            dotpos = emailID.lastIndexOf(".");
+
+            if (atpos < 1 || (dotpos - atpos < 2)) {
+                feedbackemail_validation.innerHTML = "Email is not valid";
+                document.feedbackForm.email.focus();
+                return false;
+            }
+            else {
+                feedbackemail_validation.style.display = "none";
+                feedbackemail_validation.parentNode.style.backgroundColor = "transparent";
+
+            }
+
+        }
+        if (document.feedbackForm.subject.value == "") {
+            subject_validation.innerHTML = "Subject field Required";
+            subject_validation.style.display = "block";
+            document.feedbackForm.subject.focus();
+            return false;
+        }
+        else {
+            subject_validation.style.display = "none";
+            subject_validation.parentNode.style.backgroundColor = "transparent";
+
+        }
+        if (document.feedbackForm.message.value == "") {
+            message_validation.innerHTML = "Message field Required";
+            message_validation.style.display = "block";
+            document.feedbackForm.message.focus();
+            return false;
+        }
+
+        return (true);
+    }
+
+</script>
+
+
+<div class="space-40"></div>
+
+
+
+
+@using (Html.BeginForm("GetFeedback", "Home", FormMethod.Post, new { id = "feedbackForm", name = "feedbackForm", enctype = "multipart/form-data", @onsubmit = "return(validated());" }))//smart-form
+{
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+
+                <div>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" />
+
+                </div>
+                <span id="feedbackname_validation" class="error"></span>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <div>
+                    <input type="text" class="form-control" id="email" name="email" placeholder="Enter your email" />
+
+                </div>
+                <span id="feedbackemail_validation" class="error"></span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <div>
+                    <input type="text" class="form-control" id="subject" name="subject" placeholder="Enter subject" />
+
+                </div>
+                <span id="subject_validation" class="error"></span>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div>
+            <textarea rows="5" cols="30" class="form-control" id="message" name="message" placeholder="Enter your message"></textarea>
+
+        </div>
+        <span id="message_validation" class="error"></span>
+    </div>
+
+    <input type="button" onclick="return FeedbackFormSubmit(this)" class="btn btn-skin btn-xl" style="display: block; margin-top: 10px;" value="submit">
+
+
+}
+<hr>
+
+
+
+
+

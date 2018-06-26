@@ -1,0 +1,61 @@
+/**********
+Bootstrap accordions
+*******************/
+.panel > .panel-heading {
+  position: relative;
+  padding:0px;
+  .panel-title a{
+      display: block;
+      position: relative;
+      padding: 12px 35px 12px 15px;
+  }
+}
+
+.panel > .panel-heading:after {
+     content: "\f106";
+  color: #333;
+  display: block;
+  font-family: 'FontAwesome';
+  position: absolute;
+  right: 15px;
+  top: 8px;
+}
+.panel > .panel-heading.active:after{
+    content: "\f107";
+   font-family: 'FontAwesome';
+}
+.panel-colored{
+      @include box-shadow(none);
+    border: 0px;
+}
+.panel-colored .panel-heading{
+    border: 0px;
+    &:after{
+        color:#fff;
+    }
+    a{
+        background-color:$skin-color;
+        color:#fff;
+    }
+}
+.panel-colored .panel-heading a.collapsed{
+      background-color:#333;
+        color:#fff;
+}
+.panel-simple .panel-heading a{
+    color:$skin-color;
+}
+.panel-simple .panel-heading a.collapsed{
+      background-color:transparent;
+        color:#333;
+}
+.panel-colored > .panel-heading a i{
+    margin-right: 5px;
+}
+.panel-colored .panel-body{
+    @include box-shadow(none);
+    border: 0px;
+}
+.panel-group .panel-colored .panel-heading+.panel-collapse>.panel-body {
+    border-top:0px;
+}

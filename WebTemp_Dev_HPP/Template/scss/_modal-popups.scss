@@ -1,0 +1,58 @@
+/************
+
+MODAL POPUPS FROM BOOTSTRAP
+
+************************/
+
+.modal-header{
+    border: 0px;
+    padding: 20px 15px;
+    position: relative;
+    span{
+        position: absolute;
+        top: -15px;
+        right:-15px;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        display: block;
+        text-align: center;
+        @include border-radius(50%);
+        background-color:$skin-color;
+        color:#fff;
+    }
+    .close{
+        opacity: 1;
+    }
+    .modal-title{
+        text-align: center;
+        text-transform: uppercase;
+    }
+}
+.modal-content{
+    @include box-shadow(none);
+    @include border-radius(0px);
+}
+.modal-dialog{
+    margin: 60px auto;
+}
+@media(min-width:768px){
+    .modal-form{
+        width:500px;
+        margin: 0 auto;
+    }
+}
+#videoModal{
+    .modal-body{
+        padding: 0px;
+    }
+    .close{
+          position: absolute;
+    top: -40px;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    opacity: 1;
+    }
+}

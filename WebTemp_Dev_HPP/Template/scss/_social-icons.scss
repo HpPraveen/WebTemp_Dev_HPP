@@ -1,0 +1,151 @@
+/***************
+Social icons
+***************/
+.social-list{
+    li{
+        padding: 0px;
+    }
+}
+.social-icon{
+    @include transition(all 0.3s);
+    @include border-radius(3px);
+    display: block;
+    float: left;
+    margin: 5px 2px;
+    i{
+        @include transition(all 0.2s);  
+    }
+    &.social-sm{
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        font-size: 18px;
+    }
+    &.social-gray{
+        color:#aeaeae;
+        background-color: #f3f3f3;
+        &:hover{
+            color:#fff;
+            border-color: transparent;
+
+        }
+    }
+    &.social-dark{
+        background-color: #333;
+        color: #fff;
+    }
+    &.social-rounded{
+        @include border-radius(50%);
+    }
+    &.social-signin{
+        color:#fff;
+        overflow: hidden;
+        position: relative;
+        @include border-radius(0px);
+        height: 50px;
+        line-height: 50px;
+        min-width: 200px;
+        text-align: center;
+        padding: 0px 26px;
+        padding-left:60px;
+        >span{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 50px;
+            height: 100%;
+            border-right: 1px solid rgba(255,255,255,0.2);
+            display: block;
+            line-height: 50px;
+            font-size: 22px;
+            text-align: center;
+        }
+        &:hover{
+            background-color: rgba(0,0,0,0.5)!important;
+        }
+    }
+}
+
+/**icons hover colored**/
+.si-colored-facebook ,.si-facebook:hover{
+    background-color: #3B5998!important;
+}
+.si-colored-twitter, .si-twitter:hover {
+    background-color: #00ACEE!important;
+}
+.si-colored-g-plus, .si-g-plus:hover {
+    background-color: #DD4B39!important;
+}
+.si-colored-skype, .si-skype:hover {
+    background-color: #00AFF0!important;
+}
+.si-linkedin:hover, .si-colored-linkedin {
+    background-color: #0E76A8!important;
+}
+.si-pinterest:hover, .si-colored-pinterest{
+    background-color: #C8232C!important;
+}
+.si-rss:hover, .si-colored-rss{
+    background-color: #EE802F!important;
+}
+.si-pinterest:hover, .si-colored-pinterest {
+    background-color: #C8232C!important;
+}
+.si-tumblr:hover, .si-colored-tumblr {
+    background-color: #34526F!important;
+}
+.si-vimeo:hover, .si-colored-vimeo {
+    background-color: #86C9EF!important;
+}
+.si-digg:hover, .si-colored-digg {
+    background-color: #191919!important;
+}
+.si-instagram:hover, .si-colored-instagram {
+    background-color: #3F729B!important;
+}
+.si-flickr:hover, .si-colored-flickr {
+    background-color: #FF0084!important;
+}
+.si-paypal:hover, .si-colored-paypal {
+    background-color: #00588B!important;
+}
+.si-yahoo:hover, .si-colored-yahoo {
+    background-color: #720E9E!important;
+}
+.si-android:hover, .si-colored-android {
+    background-color: #A4C639!important;
+}
+.si-appstore:hover, .si-colored-appstore {
+    background-color: #000!important;
+}
+.si-dropbox:hover,.si-colored-dropbox {
+    background-color: #3D9AE8!important;
+}
+.si-dribbble:hover, .si-colored-dribbble {
+    background-color: #EA4C89!important;
+}
+.si-soundcloud:hover, .si-colored-soundcloud {
+    background-color: #F70!important;
+}
+.si-xing:hover, .si-colored-xing {
+    background-color: #126567!important;
+}
+.si-phone:hover, .si-colored-phone {
+    background-color: #444!important;
+}
+.si-behance:hover, .si-colored-behance{
+    background-color: #053eff!important;
+}
+.si-github:hover, .si-colored-github {
+    background-color: #171515!important;
+}
+.si-stumbleupon:hover, .si-colored-stumbleupon {
+    background-color: #F74425!important;
+}
+.si-email:hover, .si-colored-email {
+    background-color: #6567A5!important;
+}
+.si-wordpress:hover, .si-colored-wordpress {
+    background-color: #1E8CBE!important;
+}

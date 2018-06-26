@@ -1,0 +1,174 @@
+/***********
+image hover styles.
+**********/
+.image-hover-light{
+    overflow: hidden;
+    position: relative;
+    img{
+        @include transition(all 300ms);
+        width: 100%;
+    }
+    .overlay{
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        visibility: hidden;
+        background-color: rgba(255,255,255,0.8);
+        @include transition(all 0.3s);
+        p{
+            width: 100%;
+            top: 50%;
+            margin-top: -10px;
+            color: #333;
+            font-size: 14px;
+            text-transform: uppercase;
+            position: absolute;
+            text-align: center;
+            left: 0;
+        }
+    }
+    &:hover .overlay{
+        visibility: visible;
+        opacity: 1;
+    }
+    &:hover img{
+        @include transform(scale(1.1));
+    }
+}
+
+/*dark style**/
+.image-hover-dark{
+     overflow: hidden;
+    position: relative;
+    img{
+        @include transition(all 300ms);
+        width: 100%;
+    }
+    .overlay{
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        visibility: hidden;
+        background-color: rgba(0,0,0,0.8);
+        @include transition(all 0.3s);
+        span{
+            display: block;
+            color:#fff;
+            text-transform: uppercase;
+            font-size: 14px;
+            padding: 15px;
+        }
+        p{
+            width: 100%;
+            top: 50%;
+            margin-top: -10px;
+            color: #333;
+            font-size: 14px;
+            text-transform: uppercase;
+            position: absolute;
+            text-align: center;
+            left: 0;
+            a{
+                display: inline-block;
+                margin: 1px;
+                color:#fff;
+                width: 40px;
+                height: 40px;
+                line-height: 40px;
+                text-align: center;
+                background-color: rgba(0,0,0,0.8);
+                @include border-radius(4px);
+                &:hover{
+                    background-color: $skin-color;
+                }
+            }
+        }
+    }
+    
+     &:hover .overlay{
+        visibility: visible;
+        opacity: 1;
+    }
+    &:hover img{
+        @include transform(scale(1.1));
+    }
+}
+
+.mouse-overlay{
+    .inner{
+        overflow: hidden;
+    position: relative;
+    }
+    img{
+        @include transition(all 300ms);
+        width: 100%;
+    }
+    .overlay{
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        visibility: hidden;
+        background-color: rgba(0,0,0,0.8);
+        @include transition(all 0.3s);
+        span{
+            display: block;
+            color:#fff;
+            text-transform: uppercase;
+            font-size: 14px;
+            padding: 15px;
+        }
+        p{
+            width: 100%;
+            top: 50%;
+            margin-top: -10px;
+            color: #333;
+            font-size: 14px;
+            text-transform: uppercase;
+            position: absolute;
+            text-align: center;
+            left: 0;
+            a{
+                display: inline-block;
+                margin: 1px;
+                color:#fff;
+                width: 40px;
+                height: 40px;
+                line-height: 40px;
+                text-align: center;
+                background-color: rgba(0,0,0,0.8);
+                @include border-radius(4px);
+                &:hover{
+                    background-color: $skin-color;
+                }
+            }
+        }
+    }
+    &:hover .overlay{
+        visibility: visible;
+        opacity: 1;
+    }
+    &:hover img{
+        @include transform(scale(1.1));
+    }  
+}
+.grid-desc{
+    padding:15px 0px;
+    h4{
+        margin-bottom: 5px;
+    }
+    p{
+        font-size: 13px;
+    }
+}

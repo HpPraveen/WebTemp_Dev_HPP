@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace WebTemp_Dev_HPP
+namespace TeKssWeb
 {
     public class BundleConfig
     {
@@ -23,9 +23,9 @@ namespace WebTemp_Dev_HPP
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+            bundles.Add(new StyleBundle("~/Template/bootstrap").Include(
+                      "~/Template/bootstrap/css/bootstrap.css",
+                      "~/Template/css/style.css"));
         }
     }
 }

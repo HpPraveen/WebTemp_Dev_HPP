@@ -1,0 +1,25 @@
+
+/* 
+   Revolution slider customization
+*/
+
+.flat-btn
+{
+    font-size: 16px;
+    text-transform: uppercase;
+    font-family: $title-font;
+    font-weight: 600;
+    color:#fff;
+    padding: 12px 25px;
+    border: 1px solid #fff;
+    &:hover,&:focus{
+        color:#333;
+        background-color: #fff;
+    }
+}
+.text-white{
+    color: #fff;
+}
+.tp-caption.NotGeneric-Title, .NotGeneric-Title,.tp-caption.NotGeneric-Button, .NotGeneric-Button{
+    font-family: $title-font;
+}

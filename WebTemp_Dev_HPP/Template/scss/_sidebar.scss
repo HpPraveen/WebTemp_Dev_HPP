@@ -1,0 +1,116 @@
+/**************
+
+Sidebar css start
+
+****************/
+
+.widget{
+    margin-bottom: 40px;
+    h3{
+        font-size: 13px;
+        font-weight: 600;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+        color:#333;
+    }
+    ul.list-unstyled{
+        margin: 0;
+        padding: 0;
+        li{
+            padding-bottom: 8px;
+            a{
+                text-transform: uppercase;
+                &:after{
+                    content: "\f105";
+                    margin-left: 8px;
+                    font-family: 'FontAwesome';
+                }
+            }
+        }
+    }
+    .tag-list{
+        li{
+            padding: 0;
+            margin:0px;
+            a{
+                display: block;
+                margin: 2px;
+                padding: 3px 8px;
+                background-color: #333;
+                color:#fff;
+                font-size:11px;
+                font-weight: 400;
+                text-transform: uppercase;
+                &:hover{
+                    background-color: $skin-color;
+                    color:#fff;
+                }
+            }
+        }
+    }
+    .latest-post{
+        a{
+            border-bottom:1px solid #eee;
+            text-transform: uppercase;
+            color:#777;
+            padding-left: 0px;
+            &:hover{
+                background-color: transparent;
+                color:$skin-color;
+            }
+        }
+        i{
+            margin-left:8px;
+        }
+        span{
+            color:#999;
+            display: block;
+        }
+    }
+    .left-img{
+
+        li{
+            padding-bottom:10px;
+            img{
+                width: 60px;
+                height: auto;
+                float: left;
+                margin-right: 15px;
+            }
+            .thumb:after{
+                content: "";
+                display: none;
+            }
+            .widget-content{
+                overflow: hidden;
+                h4{
+                    font-size: 14px;
+                    font-weight:600;
+                    margin-bottom:0;
+
+                    a{
+                        color:#666;
+                        text-transform:capitalize;
+                        &:after{
+                            content: "";
+                            display: none;
+                        }
+                        &:hover{
+                            color: $skin-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.tweet{
+    ul{
+        list-style: none;
+        padding: 0px;
+        li{
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+    }
+}

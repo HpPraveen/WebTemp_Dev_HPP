@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 
-namespace WebTemp_Dev_HPP
+namespace TeKssWeb
 {
     public class MvcApplication : System.Web.HttpApplication
     {

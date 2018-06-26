@@ -1,0 +1,144 @@
+﻿@{
+    Layout = null;
+}
+
+<style>
+    span.error {
+        color: #a94442;
+    }
+
+    .red-border {
+        border: 1px solid red;
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+        border-radius: 0;
+        padding-left: 20px;
+        font-size: 13px;
+        font-weight: 500;
+        background: #fff;
+        width: 100%;
+    }
+</style>
+
+<script type="text/javascript">
+
+
+    function formSubmit(btnClicked) {
+
+        if (validate()) {
+            $('#myForm').submit();
+
+        }
+        else {
+
+        }
+
+    }
+    function validate() {
+        var name_validation = document.getElementById("name_validation");
+        var email_validation = document.getElementById("email_validation");
+        var position_validation = document.getElementById("position_validation");
+        var file_position_validation = document.getElementById("file_validation");
+        if (document.myForm.Name.value == "") {
+            name_validation.innerHTML = "Name field Required";
+            name_validation.style.display = "block";
+            document.myForm.Name.focus();
+            return false;
+        }
+        else {
+            name_validation.style.display = "none";
+            name_validation.parentNode.style.backgroundColor = "transparent";
+
+        }
+
+        if (document.myForm.EMail.value == "") {
+            email_validation.innerHTML = "Email field Required";
+            email_validation.style.display = "block";
+            document.myForm.EMail.focus();
+            return false;
+        }
+        if (document.myForm.EMail.value != "") {
+            var emailID = document.myForm.EMail.value;
+            atpos = emailID.indexOf("@@");
+            dotpos = emailID.lastIndexOf(".");
+
+            if (atpos < 1 || (dotpos - atpos < 2)) {
+                email_validation.innerHTML = "Email is not valid";
+                document.myForm.EMail.focus();
+                return false;
+            }
+            else {
+                email_validation.style.display = "none";
+                email_validation.parentNode.style.backgroundColor = "transparent";
+
+            }
+
+        }
+        if (document.myForm.Position.value == "") {
+            position_validation.innerHTML = "Position field Required";
+            position_validation.style.display = "block";
+            document.myForm.Position.focus();
+            return false;
+        }
+        else {
+            position_validation.style.display = "none";
+            position_validation.parentNode.style.backgroundColor = "transparent";
+
+        }
+        if (document.myForm.myFile.value == "") {
+            file_validation.innerHTML = "File field Required";
+            file_validation.style.display = "block";
+            document.myForm.myFile.focus();
+            return false;
+        }
+
+        return (true);
+    }
+
+</script>
+
+
+<div class="space-40"></div>
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-sm-8 col-sm-offset-2" style="margin-left: 0px;">
+            <div class="form-login-register">
+                <h4 class="text-uppercase margin-b-20">Apply Now</h4>
+                @using (Html.BeginForm("ApplyNow", "Home", FormMethod.Post, new { id = "myForm", name = "myForm", enctype = "multipart/form-data", @onsubmit = "return(validate());" }))//smart-form
+                {
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Name" id="name" name="Name" value="" />
+
+                        <span id="name_validation" class="error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Email" name="EMail" />
+
+                        <span id="email_validation" class="error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Position" value="@ViewBag.position " name="Position" />
+                        <span id="position_validation" class="error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="file" name="myFile" accept=".pdf,.doc,.docx" class="form-control" />
+                        <span id="file_validation" class="error"></span>
+                    </div>
+
+                    <div class="clearfix">
+
+                        <div>
+                            <button type="submit" onclick="return formSubmit(this)" class="btn btn-skin btn-block btn-xl">Apply</button>
+                        </div>
+                    </div>
+                }
+                <hr>
+
+            </div>
+        </div>
+    </div>
+</div>

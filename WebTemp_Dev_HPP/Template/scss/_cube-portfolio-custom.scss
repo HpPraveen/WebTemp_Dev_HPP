@@ -1,0 +1,42 @@
+/*
+Cube portfolio style
+*/
+
+.cbp-slider.ajax-slider-width{
+    max-width: 533px;
+    margin: 0 auto;
+}
+.cbp-l-project-title,.cbp-l-grid-work-title{
+    font-family: $title-font;
+    font-weight: 700;
+}
+.cbp-l-project-desc-text{
+    font-family: $default-font;
+    font-size: 14px;
+    line-height: 24px;
+}
+.cbp-l-project-desc-title span, .cbp-l-project-details-title span{
+     font-family: $title-font;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.cbp-l-loadMore-button .cbp-l-loadMore-link, .cbp-l-loadMore-button .cbp-l-loadMore-button-link{
+    font-family: $title-font;
+    font-weight: 400;
+}
+.cbp-l-filters-work .cbp-filter-item,.cbp-l-project-related-title{
+     font-family: $title-font;
+    font-weight: 400;
+}
+.cbp-l-project-details-visit,.cbp-l-filters-work .cbp-filter-item.cbp-filter-item-active{
+      font-family: $title-font;
+    font-weight: 400;
+    background: $skin-color;
+}
+.cbp-l-filters-work .cbp-filter-item:hover{
+     background: $skin-color;
+}
+.cbp-l-inline-title,.cbp-l-inline-view,.cbp-l-caption-title{
+   font-family: $title-font;
+    font-weight: 400;   
+}

@@ -1,0 +1,118 @@
+/**button**/
+.btn{
+    @include border-radius(0px);
+    overflow: hidden;
+      border: 0px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size:12px;
+    padding: 6px 12px;
+    font-family:$title-font;
+    i.left{
+        margin-right: 10px;
+    }
+    i.right{
+        margin-left: 10px;
+    }
+}
+.btn-rounded{
+ @include border-radius(25px);
+}
+.btn-3d{
+    border-bottom: 3px solid rgba(0,0,0,0.2);
+     @include border-radius(3px);
+}
+.btn-xs{
+    padding: 3px 8px;
+    font-size: 10px;
+}
+.btn-lg{
+    padding: 10px 30px;
+}
+.btn-xl{
+  height:50px;
+  line-height: 50px;
+  min-width: 200px;
+  text-align: center;
+  padding: 0px 26px;
+}
+.btn-default{
+    background-color: $default-color;
+    &:hover,&:focus{
+        background-color: $base-color;
+        color:#fff;
+    } 
+}
+.btn-skin{
+    background-color: $skin-color;
+    color:#fff;
+    &:hover,&:focus{
+        background-color: $base-color;
+        color:#fff;
+    } 
+}
+.btn-dark{
+    background-color: $base-color;
+    color:#fff;
+    &:hover,&:focus{
+        background-color: $skin-color;
+        color:#fff;
+    } 
+}
+.btn-border-dark{
+     border:2px solid #333;
+    color:#333;
+    background-color:transparent;
+     &:hover,&:focus{
+        background-color: #333;
+        border-color: #333;
+        color:#fff;
+    } 
+}
+.btn-border-white{
+    border:2px solid #fff;
+    color:#fff;
+    background-color:transparent;
+     &:hover,&:focus{
+        background-color: rgba(255,255,255,0.95);
+        border-color: rgba(255,255,255,0.95);
+        color:#333;
+    } 
+}
+.btn-border{
+    border:2px solid $skin-color;
+    color:$skin-color;
+    background-color:transparent;
+    &:hover,&:focus{
+       background-color: $skin-color;
+        color:#fff;  
+    }
+    &.btn-hvr:hover,&.btn-hvr:focus{
+       background-color: transparent;
+        color:#fff;
+    }
+    &.btn-hvr{
+        &.hvr-radial-in:hover,&.hvr-rectangle-in:hover{
+            background-color: $skin-color; 
+        }
+    }
+}
+.button-elements{
+    text-align:center;
+    a{
+        margin: 5px;
+    }
+}
+.hvr-sweep-to-right:before, .hvr-sweep-to-left:before, .hvr-sweep-to-bottom:before, .hvr-sweep-to-top:before, .hvr-bounce-to-right:before, .hvr-bounce-to-left:before, .hvr-bounce-to-bottom:before, .hvr-bounce-to-top:before, .hvr-radial-out:before, .hvr-rectangle-out:before, .hvr-shutter-out-horizontal:before, .hvr-shutter-out-vertical:before,.hvr-sweep-to-right:before, .hvr-sweep-to-left:before, .hvr-sweep-to-bottom:before, .hvr-sweep-to-top:before, .hvr-bounce-to-right:before, .hvr-bounce-to-left:before, .hvr-bounce-to-bottom:before, .hvr-bounce-to-top:before, .hvr-radial-out:before, .hvr-rectangle-out:before, .hvr-shutter-out-horizontal:before, .hvr-shutter-out-vertical:before {
+    background: $skin-color;
+}
+.hvr-radial-in:before, .hvr-rectangle-in:before, .hvr-shutter-in-horizontal:before, .hvr-shutter-in-vertical:before {
+    background:#fff;
+}
+.hvr-radial-in, .hvr-rectangle-in, .hvr-shutter-in-horizontal, .hvr-shutter-in-vertical {
+    background: $skin-color;
+    &:hover{
+      background: $skin-color;  
+    }
+}

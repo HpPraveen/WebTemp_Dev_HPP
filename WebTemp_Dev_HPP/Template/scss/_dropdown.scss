@@ -1,0 +1,252 @@
+/*************drop down menu***********/
+.dropdown-menu{
+    @include box-shadow(0 2px 5px 0 rgba(0,0,0,0.15));
+    @include border-radius(0px);
+    border: 0px;
+    min-width:200px;
+    background-color:rgba(255,255,255,1);
+    padding:0px;
+    &.dark-dropdown{
+        background-color: #222;
+        >li>a{
+            color:#aeaeae;
+            &:hover{
+                background-color: transparent;
+                color:$skin-color;
+            }
+        }
+        .mega-vertical-nav{
+            li a{
+                color:#aeaeae;
+            }
+        }
+    }
+    >li>a{
+        color:#666;
+        font-weight: 400;
+        text-transform: capitalize;
+        font-size: 14px;
+        letter-spacing: 0px;
+        padding:8px 15px;
+        font-family: $title-font;
+    }
+      &.h-item-dropdown{
+           right: 0;
+    left: auto;
+    min-width: 300px;
+    margin-top:-1px;
+ 
+    }
+}
+.dropdown-span{
+    padding: 15px;
+    display: block;
+    cursor: pointer;
+    text-transform: uppercase;
+        font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0px;
+    color:#eee;
+    &:hover{
+        color: $skin-color;
+    }
+}
+.navbar-default.header-transparent.shrink .navbar-nav > li >.dropdown-span{
+    color:#333;
+     &:hover{
+        color: $skin-color;
+    }
+}
+/*!
+ * Yamm!3
+ * Yet another megamenu for Bootstrap 3
+ * 
+ * http://geedmo.github.com/yamm3
+ */
+.yamm .nav,
+.yamm .collapse,
+.yamm .dropup,
+.yamm .yamm-fw {
+  position: static;
+}
+
+.yamm .container {
+  position: relative;
+}
+
+.yamm .dropdown.yamm-fw .dropdown-menu {
+  left: 15px;
+  right: 15px;
+}
+.yamm-content{
+    padding:25px 30px;
+    h3{
+        color:#333;
+        font-size: 13px;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+    .mega-vertical-nav{
+        >li>a{
+                color:#666;
+                padding: 5px 0px;
+                text-transform: capitalize;
+                font-size: 14px;
+                letter-spacing: 0px;
+                font-weight:400;
+                font-family:$title-font;
+                &:hover,&:focus{
+                    color:$skin-color;
+                    background-color: transparent;
+                }
+                i{
+                    margin-right: 10px;
+                }
+            }
+    }
+}
+
+/** third level dropdown**/
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu>.dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: 0px;
+    margin-left: 0px;
+}
+
+.dropdown-submenu:hover>.dropdown-menu {
+    display: block;
+}
+
+.dropdown-submenu>a:after {
+    display: block;
+    content: " ";
+    float: right;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 5px 0 5px 5px;
+    border-left-color: #ccc;
+    margin-top: 5px;
+    margin-right: -10px;
+}
+
+.dropdown-submenu:hover>a:after {
+    border-left-color: $skin-color;
+}
+
+
+
+.dropdown-submenu.pull-left>.dropdown-menu {
+    left: -100%;
+    margin-left: 0px;
+}
+
+/**search on click**/
+.dropdown-search{
+    position: relative;
+}
+.search-click{
+    position: absolute;
+    top:0;   
+    height: 100%;
+    z-index: 999;
+   display: none;
+    left:0;
+    width: 100%;
+    background-color:rgba(255,255,255,0.95);
+    .container{
+       
+    }
+    form{
+         background-color: transparent;
+         padding: 0px 15px;
+        .form-control{
+        margin: 0px;
+        @include border-radius(0px);
+        @include box-shadow(none);
+        @include transition(all 0.3s);
+         height: 75px;
+         background-color: transparent;
+         border: 0px;
+         font-size: 20px;
+         font-weight: 400;
+    }
+    .fa-times{
+        cursor: pointer;
+        font-size: 18px;
+        right: 30px;
+        top: 28px;
+        position: absolute;
+        color:#777;
+    }
+    }
+}
+.header-transparent.shrink{
+    .search-click{
+        .form-control{
+            height: 52px;
+        }
+        .fa-times{
+            top: 15px;
+        }
+    } 
+}
+
+@media(min-width:768px){
+    .dropdown-menu{
+        @include transition(all 0.3s ease);
+        @include transform(translate3d(0, 20px, 0));
+        display: block;
+        visibility: hidden;
+        opacity: 0;
+    }
+    .open>.dropdown-menu{
+         display: block;
+        visibility: visible;
+        opacity: 1;
+        @include transform(translate3d(0, 0px, 0));
+    }
+   
+    .dropdown-submenu>.dropdown-menu{
+        @include transition(all 0.3s ease);
+        @include transform(translate3d(0, 0px, 0));
+        opacity: 1;
+        visibility: visible;
+        display: none;
+    }
+     .dropdown-submenu:hover .dropdown-menu{
+    }
+}
+
+
+@media (max-width: 767px){
+    .navbar-nav{
+        margin: 0px -15px;
+    }
+.dropdown-submenu > .dropdown-menu {
+    display: block;
+    margin-left: 15px;
+}
+.navbar-nav .open .dropdown-menu .dropdown-header, .navbar-nav .open .dropdown-menu>li>a {
+    padding: 5px 15px 5px 25px;
+}
+.navbar-inverse .navbar-nav{
+    background-color: #000;
+}
+.navbar-default .navbar-nav{
+    background-color: #fff;
+}
+.navbar-default.header-transparent .navbar-nav>li>a{
+    color:#333;
+}
+.yamm-content h3{
+    margin-top: 10px;
+    color:#eee;
+}
+}

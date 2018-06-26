@@ -1,0 +1,135 @@
+/*
+One page styles
+*/
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,700';
+@import 'https://fonts.googleapis.com/css?family=Lato:400,400i,700,900';
+@import 'https://fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i,700';
+@import "_variables.scss";
+@import "_mixins.scss";
+@import "_base.scss";
+@import "_headings.scss";
+@import "_navbar.scss";
+@import "_dropdown.scss";
+@import "_img-hover.scss";
+@import "_icon-img-boxes.scss";
+@import "_buttons.scss";
+@import "_intro-sections.scss";
+@import "_progress-bars.scss";
+@import "_buttons.scss";
+@import "_blog.scss";
+@import "_fullscreen-nav.scss";
+@import "_team.scss";
+@import "_form-elements.scss";
+@import "_social-icons.scss";
+@import "_master-slider.scss";
+@import "_cta.scss";
+@import "_revolution.scss";
+@import "_intro-sections.scss";
+@import "_fullscreen-nav.scss";
+@import "_footers.scss";
+
+
+.testi-bg{
+    background: url('../images/bg-4.jpg') no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    position: relative;
+    padding: 90px 0;
+    p{
+        font-size: 16px;
+        color:#fff;
+        font-weight: 400;
+        font-family: $sub-font;
+        font-style: italic;
+    }
+    h5{
+        color:#fff;
+    }
+    .owl-theme .owl-controls .owl-page span{
+        width: 8px;
+        height: 8px;
+        background-color: $skin-color;
+    }
+}
+.text-rotator{
+    h6{
+        color:#fff;
+    }
+}
+#text-rotator.flexslider{
+    background-color: transparent;
+    border: 0px;
+    margin: 20px 0;
+}
+
+
+/***self hosted video css***/
+/**video css new**/
+.video-section {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: table;
+  overflow: hidden; 
+  .bottom-row{
+      position: absolute;
+      width:100%;
+      left: 0;
+      bottom: 0;
+      text-align: center;
+      z-index:9;
+      li a{
+          color:#fff;
+          margin: 0px 5px;
+      }
+  }
+}
+
+.video-section .overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; }
+
+.video-section .fs-background-container {
+  left: 0; }
+
+.video-section .video-overlay {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  z-index: 2; }
+
+
+/***Template common styles change for one page template**/
+.top-header .navbar-nav > li > a{
+    font-family:$title-font;
+    font-weight:700;
+        text-transform: capitalize;
+    font-size: 1.3rem;
+}
+.call-to-action h3{
+   font-family:$sub-font;
+    font-weight:400;
+    font-style: italic;
+        text-transform: capitalize; 
+}
+.fullscreen-cover h1{
+      font-family:$title-font;
+    font-weight:700;
+    text-transform: capitalize;
+}
+@media(max-width:991px){
+    .parallax{
+    background-attachment: scroll!important;
+    background-position: 50% 50%!important;
+}
+}

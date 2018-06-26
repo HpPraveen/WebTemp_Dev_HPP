@@ -1,0 +1,179 @@
+/** navigation**/
+.navbar{
+    font-family: $title-font;
+}
+.navbar-headroom{
+    padding: 10px 0;
+    .nav-header-right .h-item a{
+        color:#333;
+    }
+}
+.top-header{
+    border:0px;
+    margin:0px;
+    .navbar-nav>li>a{
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 12px;
+        letter-spacing: 1px;
+        font-family:$title-font;
+        &:hover{
+            color:$skin-color;
+        }       
+    }
+}
+.top-header .label{
+   display: inline-block;
+   margin-left: 10px;
+}
+.top-header .navbar-nav>.active>a, .top-header .navbar-nav>.active>a:focus, .top-header .navbar-nav>.active>a:hover,.top-header .navbar-nav>.open>a, .top-header .navbar-nav>.open>a:focus, .top-header .navbar-nav>.open>a:hover{
+    color:$skin-color !important;
+    background-color: transparent;
+}
+.navbar-default{
+    background-color: #fff;
+}
+.header-transparent{
+    background-color: transparent;
+    padding: 10px 0;
+    @include transition(all 0.4s);
+}
+.header-transparent.shrink.navbar-inverse{
+    background-color: rgba(0,0,0,0.95);
+    padding: 0px;
+}
+.header-transparent.shrink.navbar-default{
+    background-color: rgba(255,255,255,0.95);
+    padding: 0px;
+}
+.navbar-default.header-transparent .navbar-nav>li>a{
+    color:#eee;
+    &:hover{
+        color:$skin-color;
+    }
+}
+.navbar-default.header-transparent.shrink .navbar-nav>li>a{
+    color:#333;
+    &:hover{
+        color:$skin-color;
+    }
+}
+.navbar-default.header-transparent .navbar-brand{
+    background-image: url('../images/logo-light.png');
+    background-repeat: no-repeat;
+    width: 91px;
+    height: auto;
+    text-indent: -9999px;
+    background-position: 50% 50%;
+    margin-left: 12px;
+}
+.navbar-inverse.header-transparent .navbar-brand{
+    background-image: url('../images/logo-light.png');
+    background-repeat: no-repeat;
+    width: 91px;
+    height: auto;
+    text-indent: -9999px;
+    background-position: 50% 50%;
+    margin-left: 7px;
+}
+.navbar-default.header-transparent.shrink .navbar-brand{
+    background-image: url('../images/logo-dark.png');
+}
+.navbar-default.header-transparent.shrink{
+    border-bottom: 1px solid #eee;
+}
+.navbar-default.header-transparent.shrink .h-item{
+    a{
+        color:#333;
+    }
+}
+.navbar-inverse .navbar-nav>li>a{
+    color:#eee;
+}
+.nav-header-right{
+    .h-item{
+        display: block;
+        float: left;
+        margin-left: 8px;
+        a{
+            display: block;
+            padding: 11px 10px;
+            color:#fff;
+        }
+    }
+}
+.nav-trigger-fullscreen{
+    background-color: transparent;
+    padding: 0px;
+    border: 0px;
+    margin-top: 9px;
+    color: #aeaeae;
+    font-size: 21px;
+}
+/***sticky header**/
+.sticky-header{
+    padding: 10px 0;
+
+    .navbar-brand>img{
+        margin-top: -1px;
+    }
+}
+.navbar-default.sticky-header {
+    border-bottom:1px solid #eee;
+    .nav-header-right .h-item a{
+        color:#777;
+    }
+}
+.navbar-inverse.sticky-header {
+    .nav-header-right .h-item a{
+        color:#fff;
+    }
+}
+@media(min-width:768px){
+    .nav>li>a{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+.top-header.navbar-default .navbar-toggle, .top-header.navbar-inverse .navbar-toggle{
+    border: 0px;
+    &:hover,&:focus{
+        background-color: transparent;
+    }
+    .icon-bar {
+        background-color: $skin-color;
+    }
+}
+
+/**header logo center style**/
+.center-logo{
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+}
+@media (min-width: 768px) {
+    .header-align-center{
+        &.navbar .navbar-nav {
+            display: inline-block;
+            float: none;
+            vertical-align: top;
+        }
+
+        &.navbar .navbar-collapse {
+            text-align: center;
+        }
+    }
+}
+
+/**headroom navbar**/
+.headroom {
+    @include transition(transform 200ms linear);
+    @include box-shadow(0px 1px 3px rgba(0,0,0,0.2));
+}
+
+.headroom--pinned {
+    @include transform(translateY(0%));
+}
+
+.headroom--unpinned {
+    @include transform(translateY(-100%));
+}
